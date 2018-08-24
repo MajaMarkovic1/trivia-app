@@ -1,0 +1,22 @@
+<template>
+    <div>
+        <div></div>
+    </div>
+</template>
+
+<script>
+//import { store } from './../store'
+export default {
+
+    created(){
+        this.$store.dispatch('fetchRandomJoke')
+    },
+
+    beforeRouteEnter(to, from, next){
+        store.dispatch('fetchRandomJoke').then(() => {
+            next()
+        })
+    }
+}
+</script>
+
