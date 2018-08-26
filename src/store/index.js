@@ -47,13 +47,13 @@ export const store = new Vuex.Store({
             })
 
         },
-        fetchTrivia(context){
-            triviaService.getRandomTrivia().then(({data}) => {
+        fetchTrivia(context, category){
+            triviaService.getRandomTrivia(category).then(({data}) => {
                 context.commit('setTrivia', data)
             })
         },
         fetchTriviaCategory(context){
-            triviaService.getRandomTrivia().then(({data}) => {
+            triviaService.getRandomCategory().then(({data}) => {
                 context.commit('setTriviaCategory', data)
             })
         }
