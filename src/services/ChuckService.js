@@ -1,11 +1,17 @@
-const Chuck  = require('chucknorris-io'),
-client = new Chuck();
+import ChuckClient from 'chucknorris-io' 
 
 
-export default {
+export default class Chuck{
+
+    constructor(){
+        this.client = new ChuckClient()
+
+    }
 
    getRandomJoke() {
-       return client.getRandomJoke()
+       return this.client.getRandomJoke()
    }
 }
+
+export const chuckService = new Chuck()
 

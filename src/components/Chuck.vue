@@ -13,7 +13,7 @@
 
 <script>
 import { store } from './../store'
-import { mapGetters, mapMutations } from 'vuex'
+import { mapGetters, mapMutations, mapActions } from 'vuex'
 
 export default {
 
@@ -35,6 +35,10 @@ export default {
             'setJoke'
         ]),
 
+        ...mapActions([
+            'fetchRandomJoke'
+        ]),
+
         getNewJoke(){
             store.dispatch('fetchRandomJoke').then(() => {
                 {}
@@ -47,7 +51,7 @@ export default {
     },
 
     created(){
-        this.$store.dispatch('fetchRandomJoke')
+        this.fetchRandomJoke()
     },
 
     beforeRouteEnter(to, from, next){
@@ -61,7 +65,7 @@ export default {
 <style>
 .container {
    margin-top: 1rem;
-    width: 40%;
+  
 }
 </style>
 
