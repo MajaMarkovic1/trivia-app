@@ -17,13 +17,13 @@ export const store = new Vuex.Store({
     },
 
     getters: {
-        getJoke(joke){
+        getJoke(state){
             return state.joke
         }
     },
 
     actions: {
-        fetchRandomJoke(context){
+        fetchRandomJoke(context, joke){
             ChuckService.getRandomJoke().then((joke) => {
                 context.commit('setJoke', joke)
             })

@@ -11,7 +11,7 @@ export default new Router ({
     mode: 'history',
     routes: [
         {path: '/', component: TriviaApp},
-        {path: '/route', component: Chuck},
+        {path: '/chuck', component: Chuck},
         
         
     ]
